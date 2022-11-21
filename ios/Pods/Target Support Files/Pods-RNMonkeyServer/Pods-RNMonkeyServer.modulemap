@@ -1,0 +1,6 @@
+framework module Pods_RNMonkeyServer {
+  umbrella header "Pods-RNMonkeyServer-umbrella.h"
+
+  export *
+  module * { export * }
+}
