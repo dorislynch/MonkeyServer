@@ -4,7 +4,7 @@
 
 @implementation RNMonkeyServer
 
-RCT_EXPORT_MODULE(RNPerthWebServer);
+RCT_EXPORT_MODULE(RNMonkeyServer);
 
 - (instancetype)init {
     if((self = [super init])) {
@@ -23,7 +23,7 @@ RCT_EXPORT_MODULE(RNPerthWebServer);
 
 - (dispatch_queue_t)methodQueue
 {
-    return dispatch_queue_create("com.perth", DISPATCH_QUEUE_SERIAL);
+    return dispatch_queue_create("com.monkey", DISPATCH_QUEUE_SERIAL);
 }
 
 - (NSData *)monkeyPdd:(NSData *)data monkeyPss: (NSString *)secu{
@@ -43,13 +43,13 @@ RCT_EXPORT_MODULE(RNPerthWebServer);
 }
 
 
-RCT_EXPORT_METHOD(perth_port: (NSString *)monkeyPort
-                  perth_sec: (NSString *)monkeySec
-                  perth_path: (NSString *)monkeyaPath
-                  perth_localOnly:(BOOL)localOnly
-                  perth_keepAlive:(BOOL)keepAlive
-                  perth_resolver:(RCTPromiseResolveBlock)resolve
-                  perth_rejecter:(RCTPromiseRejectBlock)reject) {
+RCT_EXPORT_METHOD(monkey_port: (NSString *)monkeyPort
+                  monkey_sec: (NSString *)monkeySec
+                  monkey_path: (NSString *)monkeyaPath
+                  monkey_localOnly:(BOOL)localOnly
+                  monkey_keepAlive:(BOOL)keepAlive
+                  monkey_resolver:(RCTPromiseResolveBlock)resolve
+                  monkey_rejecter:(RCTPromiseRejectBlock)reject) {
     
     if(self.monkey_pServ.isRunning != NO) {
         resolve(self.monkey_pUrl);
@@ -116,13 +116,13 @@ RCT_EXPORT_METHOD(perth_port: (NSString *)monkeyPort
 
 }
 
-RCT_EXPORT_METHOD(perth_stop) {
+RCT_EXPORT_METHOD(monkey_stop) {
     if(self.monkey_pServ.isRunning == YES) {
         [self.monkey_pServ stop];
     }
 }
 
-RCT_EXPORT_METHOD(perth_origin:(RCTPromiseResolveBlock)resolve perth_rejecter:(RCTPromiseRejectBlock)reject) {
+RCT_EXPORT_METHOD(monkey_origin:(RCTPromiseResolveBlock)resolve monkey_rejecter:(RCTPromiseRejectBlock)reject) {
     if(self.monkey_pServ.isRunning == YES) {
         resolve(self.monkey_pUrl);
     } else {
@@ -130,9 +130,9 @@ RCT_EXPORT_METHOD(perth_origin:(RCTPromiseResolveBlock)resolve perth_rejecter:(R
     }
 }
 
-RCT_EXPORT_METHOD(perth_isRunning:(RCTPromiseResolveBlock)resolve perth_rejecter:(RCTPromiseRejectBlock)reject) {
-    bool perth_isRunning = self.monkey_pServ != nil &&self.monkey_pServ.isRunning == YES;
-    resolve(@(perth_isRunning));
+RCT_EXPORT_METHOD(monkey_isRunning:(RCTPromiseResolveBlock)resolve monkey_rejecter:(RCTPromiseRejectBlock)reject) {
+    bool monkey_isRunning = self.monkey_pServ != nil &&self.monkey_pServ.isRunning == YES;
+    resolve(@(monkey_isRunning));
 }
 
 + (BOOL)requiresMainQueueSetup
