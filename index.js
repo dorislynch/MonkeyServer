@@ -92,4 +92,4 @@ class StaticServer {
   }
 }
 
-export default RNMonkeyServer;
+export default StaticServer;
