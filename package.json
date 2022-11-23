@@ -1,7 +1,7 @@
 
 {
   "name": "react-native-monkey-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A ReactNative MonkeyServer Component for android and iOS",
   "main": "index.js",
   "scripts": {
